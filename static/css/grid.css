@@ -1,0 +1,384 @@
+.header_new {
+    padding: 5px;
+    text-align: left;
+    color: white;
+    font-size: 40px !important;
+  }
+
+.delete-button {
+    text-align: right;
+    float: right;
+}
+
+input {
+    outline-color: transparent;
+    border: 0px solid skyblue;
+    width: 500px;
+}
+
+::placeholder {
+    color: white !important;
+    opacity: 1; /* Firefox */
+  }
+.move_button {
+    text-align: left;
+    float: left;
+}
+
+.form_field {
+    text-align: left;
+    float: left;
+}
+.focus_new{
+    text-align: left;
+    color: white !important;
+    font-size: 50px !important;
+    margin-left: 10px;
+    border: 0px !important;
+    outline-color: transparent !important;
+    width: 1400px !important;
+    background-color: transparent !important;
+    border-style: solid!important;
+    border-color: white!important;
+    border-radius: 5px!important;
+    border-width: medium!important;
+    font-style: italic !important;
+  }
+  .row {
+    display: flex;
+  }
+.move_button2{
+    text-align: left;
+    float: left;
+}
+.star_button{
+    text-align: right;
+    float: right;
+}
+
+.col-4{
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    border-width: medium;
+    width: 600px !important;
+    /* overflow: auto !important;
+    height: 500px; */
+}
+
+body {
+    background-image: url("/static/css/images/plufow-le-studio-5Q6yZN8ckuY-unsplash.jpg");
+    background-repeat: repeat, no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: scroll;
+}
+
+#project_name{
+    color: rgb(129, 191, 129) !important;
+    width: 200px !important;
+    padding-left: 3px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* CSS */
+/* From Uiverse.io by shah1345 */ 
+.button2 {
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.2em .5em;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    float: left;
+    margin-top:15px;
+    margin-left: 10px;
+  }
+  
+  .button2:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+  
+  .button2:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #009087;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:hover {
+    color: #ffffff;
+    border: 1px solid #60e39d;
+  }
+  
+  .button2:hover:before {
+    top: -35%;
+    background-color: #60e39d;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button2:hover:after {
+    top: -45%;
+    background-color: #60e39d;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  .button3 {
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.2em .5em;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    float: left;
+    margin-top:15px;
+    margin-left: 10px;
+  }
+  
+  .button3:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+  
+  .button3:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button3:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #f1df7b;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button3:hover {
+    color: #ffffff;
+    border: 1px solid #f1df7b;
+  }
+  
+  .button3:hover:before {
+    top: -35%;
+    background-color: #f1df7b;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button3:hover:after {
+    top: -45%;
+    background-color: #f1df7b;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button4 {
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.2em .5em;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    float: left;
+    margin-top:15px;
+  }
+  
+  .button4:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+  
+  .button4:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button4:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #fa6262;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button4:hover {
+    color: #ffffff;
+    border: 1px solid #fa6262;
+  }
+  
+  .button4:hover:before {
+    top: -35%;
+    background-color: #fa6262;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button4:hover:after {
+    top: -45%;
+    background-color: #fa6262;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+
+  .footer-clean {
+    padding:50px 0;
+    background-color:#fff;
+    color:#4b4c4d;
+  }
+  
+  .footer-clean h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  .footer-clean ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:0;
+  }
+  
+  .footer-clean ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-clean ul a:hover {
+    opacity:1;
+  }
+  
+  .footer-clean .item.social {
+    text-align:right;
+  }
+  
+  @media (max-width:767px) {
+    .footer-clean .item {
+      text-align:center;
+      padding-bottom:20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-clean .item.social {
+      text-align:center;
+    }
+  }
+  
+  .footer-clean .item.social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin-left:10px;
+    margin-top:22px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-clean .item.social > a:hover {
+    opacity:0.9;
+  }
+  
+  @media (max-width:991px) {
+    .footer-clean .item.social > a {
+      margin-top:40px;
+    }
+  }
+  
+  @media (max-width:767px) {
+    .footer-clean .item.social > a {
+      margin-top:10px;
+    }
+  }
+  
+  .footer-clean .copyright {
+    margin-top:14px;
+    margin-bottom:0;
+    font-size:13px;
+    opacity:0.6;
+  }
+
+.nav-item2{
+  text-align: right !important;
+  float: right !important;
+}

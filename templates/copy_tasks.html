@@ -1,0 +1,55 @@
+{% include "header.html" %}
+{% from "bootstrap5/form.html" import render_form %}
+
+<div class="container text-left">
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="header_new"><u>Not Started</u></div>
+        <form action="main.py" method="post" name="movie_list">
+            <table class="table is-striped is-fullwidth">
+              {% for task in tasks %}
+                {%if task.completed == 0 and task.user_id == current_user.id%}
+              <tr>
+                <td>
+                {{ task.task_name }}
+                </td>
+              </tr>
+                {% endif %}
+              {% endfor %}
+            </table>
+          </form>
+      </div>
+      <div class="col">
+        <div class="header_new"><u>In Progress</u></div>
+        <form action="main.py" method="post" name="movie_list">
+            <table class="table is-striped is-fullwidth">
+              {% for task in tasks %}
+                {%if task.completed == 1 and task.user_id == current_user.id%}
+              <tr>
+                <td>
+                {{ task.task_name }}
+                </td>
+              </tr>
+                {% endif %}
+              {% endfor %}
+            </table>
+          </form>
+      </div>
+      <div class="col">
+        <div class="header_new"><u>Completed</u></div>
+        <form action="main.py" method="post" name="movie_list">
+            <table class="table is-striped is-fullwidth">
+              {% for task in tasks %}
+                {%if task.completed == 2 and task.user_id == current_user.id%}
+              <tr>
+                <td>
+                {{ task.task_name }}
+                </td>
+              </tr>
+                {% endif %}
+              {% endfor %}
+            </table>
+          </form>
+      </div>
+    </div>
+  </div>

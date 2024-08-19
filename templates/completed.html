@@ -1,0 +1,23 @@
+{% include "header.html" %}
+{% from "bootstrap5/form.html" import render_form %}
+
+<div class="header_new"><u>Completed</u></div>
+  <form action="main.py" method="post" name="movie_list">
+    <table class="table is-striped is-fullwidth">
+      {% for task in tasks %}
+        {%if task.completed == 2 and task.user_id == current_user.id%}
+      <tr>
+        <td>
+          <!-- <label class="checkbox">
+            <input type="checkbox" name="match" value="matchwithpairs"/>
+          </label> -->
+          &emsp;
+          <a style="text-decoration:none" href="{{url_for('delete_post', id=task.id) }}">✖️</a>
+          &emsp;&emsp;&emsp;{{ task.task_name }}
+        </td>
+      </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
+  </form>
+</html>

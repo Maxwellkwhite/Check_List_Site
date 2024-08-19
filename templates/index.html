@@ -1,0 +1,150 @@
+{% include "header.html" %}
+{% from "bootstrap5/form.html" import render_form %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+  {{ ckeditor.load() }}
+  {{ ckeditor.config(name='body') }}
+  {{ render_form(form, novalidate=True, button_map={"submit": "primary"})}}
+  &emsp;
+<div class="container text-left px-4">
+  <div class="row justify-content-around">
+    <div class="col-4 gx-5">
+      <div class="header_new"><b>Not Started</b></div>
+      {% for task in tasks %}
+        {%if task.completed == 0 and task.user_id == current_user.id%}
+      <div class="card mb-3">
+      <div class="card-body">
+        <div class="star_button">
+          <a style="text-decoration:none" href="{{url_for('color', id=task.id) }}">⭐</a>
+        </div>
+        <h5 class="card-title">
+          <form action="{{url_for('task_update', id=task.id)}}" method="post">
+            <input style="background-color: {{task.color}}" type="text submit" id="task_name" name="task_name" value="{{ task.task_name }}">
+          </form>
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          <form action="{{url_for('project_update', id=task.id)}}" method="post">
+            <input type="text submit" id="project_name" name="project_name" onclick="this.select()" value="{{ task.project }}">
+          </form>
+          <form action="{{url_for('delete_post', id=task.id) }}" method="post">
+            <button class="button4" role="button">Delete</button>
+          </form>
+          <form action="{{url_for('update', id=task.id) }}" method="post">
+            <button class="button2" role="button">Start</button>
+          </form>
+        </h6>
+      </div>
+    </div>      
+      {%endif%}
+    {%endfor%}
+    </div>
+    <div class="col-4 gx-5">
+      <div class="header_new"><b>In Progress</b></div>
+        {% for task in tasks %}
+          {%if task.completed == 1 and task.user_id == current_user.id%}
+          <div class="card mb-3">
+          <div class="card-body">
+            <div class="star_button">
+              <a style="text-decoration:none" href="{{url_for('color', id=task.id) }}">⭐</a>
+            </div>
+            <h5 class="card-title">
+              <form action="{{url_for('task_update', id=task.id)}}" method="post">
+                <input style="background-color: {{task.color}}" type="text submit" id="task_name" name="task_name" value="{{ task.task_name }}">
+              </form>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <form action="{{url_for('project_update', id=task.id)}}" method="post">
+                <input type="text submit" id="project_name" name="project_name" onclick="this.select()" value="{{ task.project }}">
+              </form>
+              <form action="{{url_for('delete_post', id=task.id) }}" method="post">
+                <button class="button4" role="button">Delete</button>
+              </form>
+              <form action="{{url_for('demote', id=task.id) }}" method="post">
+                <button class="button3" role="button">Demote</button>
+              </form>
+              <form action="{{url_for('update', id=task.id) }}" method="post">
+                <button class="button2" role="button">Completed</button>
+            </h6>
+          </div>
+        </div>      
+          {%endif%}
+        {%endfor%}
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+      Not Started
+      <form action="main.py" method="post" name="movie_list">
+        <table class="table is-striped is-fullwidth" id="moving_table">
+          {% for task in tasks %}
+            {%if task.completed == 0%}
+          <tr>
+            <td style="background-color: {{task.color}}"> 
+              <div class="move_button">
+                &emsp;<a style="text-decoration:none" href="{{url_for('update', id=task.id) }}">➡️</a>
+                &emsp;&emsp;&emsp;
+              </div>
+              <div class="form_field">
+                <form action="{{url_for('task_update', id=task.id)}}" method="post">
+                  <input style="background-color: {{task.color}}" type="text submit" id="task_name" name="task_name" value="{{ task.task_name }}">
+                </form>
+              </div>
+              <div class="delete-button">
+                <a style="text-decoration:none" href="{{url_for('color', id=task.id) }}">⭐</a>&emsp;
+                <a style="text-decoration:none" href="{{url_for('delete_post', id=task.id) }}">✖️</a>
+              </div>
+            </td>
+          </tr>
+            {% endif %}
+          {% endfor %}
+        </table>
+      </form>
+    </div>
+    <div class="col">
+      In Progress
+      <form action="main.py" method="post" name="movie_list">
+        <table class="table is-striped is-fullwidth">
+          {% for task in tasks %}
+            {%if task.completed == 1%}
+          <tr>
+            <td style="background-color: {{task.color}}"> 
+              &emsp;
+              <div class="move_button">
+                &emsp;<a style="text-decoration:none" href="{{url_for('update', id=task.id) }}">🎯</a>
+                &emsp;&emsp;&emsp;
+              </div>
+              <div class="form_field">
+                <form action="{{url_for('task_update', id=task.id) }}" method="post">
+                  <input style="background-color: {{task.color}}" type="text submit" id="task_name" name="task_name" value="{{ task.task_name }}">
+                </form>
+              </div>
+              <div class="delete-button">
+                <a style="text-decoration:none" href="{{url_for('color', id=task.id) }}">⭐</a>&emsp;
+                <a style="text-decoration:none" href="{{url_for('delete_post', id=task.id) }}">✖️</a>
+              </div>
+            </td>
+          </tr>
+            {% endif %}
+          {% endfor %}
+        </table>
+      </form>
+    </div>
+  </div>
+</div> -->
