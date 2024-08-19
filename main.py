@@ -13,12 +13,10 @@ from flask_login import UserMixin, login_user, LoginManager, current_user, logou
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-
 app = Flask(__name__)
 ckeditor = CKEditor(app)
 Bootstrap5(app)
-app.config['SECRET_KEY'] = "ABLJKJt23354FDJODJF123454523466JFDOSF3"
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 login_manager = LoginManager()
 login_manager.init_app(app)
